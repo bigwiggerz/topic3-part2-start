@@ -3,6 +3,7 @@ package com.topic3.android.reddit.screens
 import androidx.annotation.StringRes
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
+import com.topic3.android.reddit.components.BackgroundText
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
@@ -73,7 +74,15 @@ fun SubredditsScreen(modifier: Modifier = Modifier) {
 
 @Composable
 fun Subreddit(subredditModel: SubredditModel, modifier: Modifier = Modifier) {
-    //TODO add your code here
+    Card(
+        backgroundColor = MaterialTheme.colors.surface,
+        shape = RoundedCornerShape(4.dp),
+        modifier = modifier
+            .size(120.dp)
+            .padding(start = 2.dp, end = 2.dp, top = 4.dp, bottom = 4.dp)
+    ){
+        SubredditBody(subredditModel)
+    }
 }
 
 @Composable
